@@ -1,0 +1,12 @@
+.add-api input[type=text]{
+    border: 1px solid #ccc;
+    width: 100%;
+    padding-left: 10px;
+}
+.add-api input:focus{
+    border: 1px solid #ccc !important;
+}
+.add-api button{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

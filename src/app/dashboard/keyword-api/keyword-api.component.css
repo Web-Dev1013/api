@@ -1,0 +1,9 @@
+.searchBar{
+    box-shadow: 0 2px 4px #151515a1;
+}
+.searchBar input{
+    height: 50px !important;
+    font-size: 20px;
+    color: #555 ;
+    flex: 1 1 auto;
+}

@@ -1,0 +1,59 @@
+.searchBar{
+    box-shadow: 0 2px 4px #151515a1;
+}
+.searchBar input{
+    height: 50px !important;
+    font-size: 20px;
+    color: #555 ;
+    flex: 1 1 auto;
+}
+.page-item:hover{
+    cursor: pointer;
+}
+.table, .table th, .table td{
+    border: 1px solid #ccc !important;
+}
+.keywords{
+    border: 1px solid #ccc;
+    min-height: 150px;
+}
+.keywords .col-md-2{
+    border-left: 1px solid #ccc;
+}
+.keywords textarea{
+    height: 100%;
+    font-size: 16px;
+}
+.bg-primary{
+    background: #494ca2 !important; 
+}
+.file{
+    position: absolute;
+    top: 0px;
+    left: 103px;
+    width: 100px !important;
+    opacity: 0;
+}
+#file{
+    height: 35px;
+}
+.file:hover{
+    cursor: pointer !important;
+}
+.file:hover .upload{
+    background: #242650 !important;
+}
+.csv:hover{
+    cursor: pointer;
+    background-color: #36397a;
+}
+.title-btn{
+    background: #383b7c;    
+    padding: 4px 25px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.title-btn:hover{
+    background: #242650;
+    cursor: pointer;
+}

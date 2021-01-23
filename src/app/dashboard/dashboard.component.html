@@ -1,0 +1,50 @@
+<div class="wrapper d-flex align-items-stretch">
+	<nav id="sidebar" [ngClass]="toggleSideNav?'':'active'">
+		<div class="custom-menu">
+			<button type="button" id="sidebarCollapse" class="btn btn-primary" (click)="toggleNav()">
+				<i class="fa fa-bars"></i>
+				<span class="sr-only">Toggle Menu</span>
+			</button>
+		</div>
+		<div class="p-4">
+			<h1><a href="index.html" class="logo h1">Dashboard</a></h1>
+			<ul class="list-unstyled components mb-5">
+				<li class="list" [ngClass]="activePage=='SERP'?'active':''" (click)="selectedList()">
+					<a routerLink="SERP"><span class="fa fa-eyedroper mr-3"></span> SERP API </a>
+				</li>
+				<li class="list" [ngClass]="activePage=='Keyword'?'active':''" (click)="selectedList()">
+					<a routerLink="Keyword"><span class="fa fa-eyedroper mr-3"></span> Keyword API </a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div id="content" class="p-4 p-md-5 pt-5">
+		<nav class="navbar navbar-expand-md bg-pink navbar-dark sticky-top">
+			<span class="navbar-brand ml-3">{{activePage}} &nbsp;API</span>
+			<button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed"
+				aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item ml-4" *ngIf="permission == 1">
+						<button class="btn text-light" routerLink="admin">Admin</button>
+					</li>
+					<li class="nav-item dropdown ml-4">
+						<img class="rounded-circle" src="../../assets/image/avatar.jpg" width="30" height="30">
+						<button type="button" class="btn dropdown-toggle text-light" 
+							(click)="toggleDropdown = !toggleDropdown">
+							<a class="pr-2">{{user}}</a>
+						</button>
+						<div class="dropdown-menu dropdown-menu-right d-block" (mouseleave)="toggleDropdown=!toggleDropdown" *ngIf="toggleDropdown">
+							<a class="dropdown-item" (click)="LogOut()"><i class="fa fa-sign-out"></i>Sign Out</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>

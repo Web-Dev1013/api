@@ -1,0 +1,47 @@
+<div class="">
+    <p class="h5">Keyword API</p>
+    <div class="row my-4">
+        <div class="col-md-8 col-sm-12 offset-md-2 offset-sm-0">
+            <div class="input-group searchBar">
+                <input class="px-3" type="search" placeholder="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-success px-4" type="submit"><i class="fa fa-search fa-2x"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p class="h5">Search Results</p>
+        <table class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" style="width:70%">Keyword</th>
+                    <th scope="col">Results Volume</th>
+                    <th scope="col">Difficulty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let result of results">
+                    <th scope="row">{{ result.id }}</th>
+                    <td>{{ result.name }}</td>
+                    <td>{{ result.volume }}</td>
+                    <td>{{ result.difficulty }} %</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- <div class="d-flex justify-content-between p-2">
+            <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+                (pageChange)="refreshCountries()">
+            </ngb-pagination>
+
+            <select class="custom-select" style="width: auto" [(ngModel)]="pageSize"
+                (ngModelChange)="refreshCountries()">
+                <option [ngValue]="2">2 items per page</option>
+                <option [ngValue]="4">4 items per page</option>
+                <option [ngValue]="6">6 items per page</option>
+            </select>
+        </div> -->
+    </div>
+</div>

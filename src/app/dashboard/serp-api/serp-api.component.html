@@ -1,0 +1,36 @@
+<div class="">
+    <div class="my-4">
+        <div class="">
+            <div class="bg-primary text-light p-2 font-weight-bold h6 mb-0 d-flex justify-content-between">
+                <span class="p-2">Keywords</span>
+                <div class="btn-group btn-group-md">
+                    <button class="btn title-btn" (click)="search(searchbox.value)">
+                        <span *ngIf="loading"><i class="fa fa-spinner fa-spin fa-lg text-light"></i></span>
+                        <span *ngIf="!loading" class="text-light"> Search</span>
+                    </button>
+                    <button type="button" class="btn title-btn upload text-light">Upload</button>
+                    <div class="file" style="overflow: hidden;">
+                        <input type="file" id="file" name="file" (change)="upload($event)">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-nowrap keywords">
+                <textarea rows="5" #searchbox class="w-100 px-3 py-2" placeholder="keyword1, keyword2, keyword3..."></textarea>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="bg-primary text-light h6 font-weight-bold mb-0 justify-content-between d-flex">
+            <span class="p-3">Results</span>
+            <span class="px-4 py-3 csv" (click)="onBtnExport()">CSV</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+            <div style="flex: 1 1 0px; position: relative;">
+                <ag-grid-angular #agGrid style="width: 100%; height: 351px;" id="myGrid" class="ag-theme-alpine"
+                    [defaultColDef]="defaultColDef" [columnDefs]="columnDefs" [rowData]="rowData"
+                    (gridReady)="onGridReady($event)" [pagination]="true" [paginationPageSize]="6"></ag-grid-angular>
+            </div>
+        </div>
+    </div>
+</div>
